@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Eats - Pro</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1 class="logo">🍔 Campus Eats <span class="pro">PRO</span></h1>
+    <div class="nav-right">
+      <input type="text" id="search" placeholder="Search...">
+      <button id="loginBtn">Login</button>
+      <button id="cartBtn">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
+  </nav>
+  <div class="hero">
+    <h2 id="hero-text">Craving? We Deliver in 15 Mins!</h2>
+    <p>🔥 20% OFF for First Year Students Today!</p>
+  </div>
+  <div class="container">
+    <h3 class="section-title">Our Canteens</h3>
+    <div class="cards" id="food-container"></div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal"><div class="modal-content"><h3>Your Cart</h3><div id="cart-items"></div><h4 id="total-price">Total: ₹0</h4><div class="modal-actions"><button id="closeCart" class="btn-cancel">Close</button><button onclick="placeOrder()" class="btn-confirm">Pay & Order</button></div></div></div>
+  
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal"><div class="modal-content"><h3>🎓 Student Login</h3><input id="studentId" placeholder="Enter Student ID - ex: CSE2024001" style="width:100%; padding:12px; margin:15px 0; border-radius:8px; border:1px solid #ddd"><button onclick="doLogin()" class="btn-confirm" style="width:100%">Login</button></div></div>
+
+  <!-- Tracking Modal - YE SHOCKED KAREGA -->
+  <div id="trackModal" class="modal"><div class="modal-content" style="text-align:center; width:500px"><h2>🚀 Order Placed!</h2><p id="orderIdText"></p><div class="track-line"><div class="track-progress" id="track-progress"></div></div><div class="track-steps"><span>✅ Ordered</span><span id="step2">👨‍🍳 Cooking</span><span id="step3">🛵 On the way</span><span id="step4">📦 Delivered</span></div><div id="bill"></div><button onclick="location.reload()" class="btn-confirm" style="margin-top:20px">Order Again</button></div></div>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
